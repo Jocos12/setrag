@@ -714,6 +714,215 @@ canvas {
     animation: fadeIn 0.5s ease;
 }
 
+/* Notifications */
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 15px 20px;
+    z-index: 10000;
+    min-width: 300px;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: slideInRight 0.3s ease-out;
+}
+
+.notification-success {
+    border-left: 4px solid var(--success-color);
+    background: #f8fff8;
+}
+
+.notification-error {
+    border-left: 4px solid var(--danger-color);
+    background: #fff8f8;
+}
+
+.notification-info {
+    border-left: 4px solid var(--secondary-color);
+    background: #f8fbff;
+}
+
+.notification-warning {
+    border-left: 4px solid var(--warning-color);
+    background: #fffcf8;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+}
+
+.notification-content i {
+    font-size: 18px;
+}
+
+.notification-success .notification-content i {
+    color: var(--success-color);
+}
+
+.notification-error .notification-content i {
+    color: var(--danger-color);
+}
+
+.notification-info .notification-content i {
+    color: var(--secondary-color);
+}
+
+.notification-warning .notification-content i {
+    color: var(--warning-color);
+}
+
+.notification-close {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #7f8c8d;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 4px;
+    transition: var(--transition);
+}
+
+.notification-close:hover {
+    background: rgba(0, 0, 0, 0.1);
+    color: var(--dark-color);
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Top Performers List */
+.performer-item, .team-performer-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background: white;
+    border-radius: var(--border-radius);
+    margin-bottom: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: var(--transition);
+}
+
+.performer-item:hover, .team-performer-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.performer-info, .team-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.performer-name, .team-name {
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 4px;
+}
+
+.performer-department, .team-members {
+    font-size: 12px;
+    color: #7f8c8d;
+}
+
+.performer-stats, .team-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.performer-score, .team-score {
+    font-weight: 700;
+    font-size: 18px;
+    color: var(--success-color);
+}
+
+.performer-tasks, .team-projects {
+    font-size: 12px;
+    color: #7f8c8d;
+}
+
+.team-trend {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12px;
+}
+
+.team-trend.up {
+    color: var(--success-color);
+}
+
+.team-trend.down {
+    color: var(--danger-color);
+}
+
+/* Dark Theme */
+.dark-theme {
+    --primary-color: #1a252f;
+    --secondary-color: #2980b9;
+    --dark-color: #ecf0f1;
+    --light-color: #2c3e50;
+}
+
+.dark-theme .sidebar {
+    background: linear-gradient(135deg, #1a252f 0%, #2c3e50 100%);
+}
+
+.dark-theme .header {
+    background: #2c3e50;
+    color: var(--dark-color);
+}
+
+.dark-theme .dashboard-content {
+    background: #34495e;
+}
+
+.dark-theme .kpi-card {
+    background: #2c3e50;
+    color: var(--dark-color);
+}
+
+.dark-theme .chart-container {
+    background: #2c3e50;
+}
+
+.dark-theme .tab-btn {
+    color: var(--dark-color);
+}
+
+.dark-theme .tab-btn.active {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.dark-theme .performer-item,
+.dark-theme .team-performer-item {
+    background: #2c3e50;
+    color: var(--dark-color);
+}
+
+.dark-theme .notification {
+    background: #2c3e50;
+    color: var(--dark-color);
+}
+
 /* Print Styles */
 @media print {
     .sidebar,
